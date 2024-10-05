@@ -1,0 +1,220 @@
+:root{
+  --main-color: rgb(14, 14, 23);
+  --second-color: rgb(29, 28, 48);
+  --sub-second-color:rgb(40,30,50);
+  --third-color: rgb(223, 223, 223);
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family:"Segoe UI Light";
+  transition: 0.4s ease-in-out background-color,0.4s ease-in-out border,0.2s color ease-out;
+}
+body{
+  background-color: var(--main-color);
+  color: var(--third-color);
+}
+.App{
+
+}
+.container{
+  width: 80%;
+  margin: auto;
+}
+.header{
+  width: 100%;
+  padding:{
+    bottom: 4px;
+    top: 4px;
+  };
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--second-color);
+}
+.header>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.history{
+  width: 100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-direction: column;
+}
+.history-title{
+  text-decoration: underline;
+
+}
+.history-body{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.history-footer{
+
+}
+.btn{
+  position: relative;
+  padding: 4px;
+
+  font-size: 0.75rem;
+
+  border: solid 1px var(--third-color);
+  border-radius: 4px;
+
+  background-color: var(--second-color);
+  color: var(--third-color);
+
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover{
+    background-color: var(--sub-second-color);
+  }
+}
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+
+  background-color: rgba(255,255,255,0.2);
+
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+
+  margin-left: -16px;
+  animation: ripple 1s;
+  opacity: 0;
+
+  pointer-events: none;
+}
+.option{
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s all;
+  padding:4px;
+  border: none;
+  outline: none;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  padding: 16px;
+}
+.select{
+  position: relative;
+  --up-icon:url("./assets/svg/arrow-up.svg");
+  --down-icon:url("./assets/svg/arrow-down.svg");
+  border:0;
+  outline:0;
+  color: var(--third-color);
+  -webkit-appearance: none;
+  background: var(--down-icon) no-repeat right var(--second-color);
+  padding:{
+    right:calc(1.5rem + 8px);
+    left: 8px;
+    bottom: 4px;
+    top: 4px;
+  };
+
+  background-position: right 0.1rem center;
+}
+.select:focus{
+  background: var(--up-icon) no-repeat right var(--second-color);
+  background-position: right 0.1rem center;
+}
+.toggle-switch{
+  display: block;
+  padding: 4px 4px 6px 6px;
+}
+.toggle-switch>input{
+  display: none;
+}
+.toggle-switch>input~.state
+{
+
+  display: block;
+  width: 32px;
+  height: 16px;
+  padding: 2px;
+  background-color: var(--main-color);
+  border-radius: 16px;
+}
+.toggle-switch>input:checked~.state{
+  background-color: var(--sub-second-color);
+}
+.toggle-switch>input~.state>.toggle-container{
+  position: relative;
+}
+.toggle-switch>input~.state>.toggle-container>.position{
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width:16px;
+  height: 16px;
+  border-radius:50%;
+  background-color: var(--third-color);
+  cursor: pointer;
+  transition: 0.2s left ease-in-out;
+}
+.toggle-switch>input:checked~.state>.toggle-container>.position {
+   left:calc(32px - 16px);
+}
+.input{
+  display: flex;
+  position: relative;
+  min-height: 12px;
+}
+.input input{
+  padding: 12px;
+  font-size: 1rem;
+  background-color: var(--main-color);
+  border: 1px solid var(--third-color);
+  color: var(--third-color);
+  border-radius: 4px;
+}
+.input label{
+  position: absolute;
+  top: calc(25% - 0.25rem);
+  left: 12px;
+  font-size: 1.25rem;
+  transition: 0.15s all ease-in;
+  pointer-events: none;
+}
+.input input:focus ~ label,
+.input input:valid ~ label,
+{
+  top: calc(-25% + 0.2rem);
+  padding: {
+    left: 2px;
+    right: 2px;
+  };
+  font-size: 0.8rem;
+  left: 12px;
+  background-color: var(--main-color);
+}
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
+a{
+  color: var(--third-color);
+}
