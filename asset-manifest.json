@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ru2jp/static/css/main.60344e48.css",
+    "main.js": "/ru2jp/static/js/main.523599d0.js",
+    "index.html": "/ru2jp/index.html",
+    "static/media/arrow-down.svg": "/ru2jp/static/media/arrow-down.739d77048e8e7fed09b2.svg",
+    "static/media/arrow-up.svg": "/ru2jp/static/media/arrow-up.e99d8e4ea1d66f7b563c.svg",
+    "main.60344e48.css.map": "/ru2jp/static/css/main.60344e48.css.map",
+    "main.523599d0.js.map": "/ru2jp/static/js/main.523599d0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.60344e48.css",
+    "static/js/main.523599d0.js"
+  ]
+}
